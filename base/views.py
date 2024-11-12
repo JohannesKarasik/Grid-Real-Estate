@@ -40,6 +40,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Connection
+from django.http import JsonResponse
+
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})
 
 
 
