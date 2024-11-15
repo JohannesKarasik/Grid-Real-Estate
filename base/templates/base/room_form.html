@@ -39,8 +39,8 @@
         
           <!-- Room Description Field -->
           <div class="form__group">
-            <label for="room_description">Room Description</label>
-            {{ form.description }}
+            <label for="description">Room Description:</label>
+            <textarea required name="description" id="description" placeholder="Enter the room description">{{ form.description.value }}</textarea>
           </div>
         
           <!-- Multiple File Upload -->
@@ -53,6 +53,7 @@
           <div class="form__action">
             <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
             <button class="btn btn--main" type="submit">Create Post</button>
+          </div>
         </form>
       </div>
     </div>
