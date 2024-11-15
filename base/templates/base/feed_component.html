@@ -3,9 +3,9 @@
   <div class="roomListRoom__header">
     {% if room.host and room.host.id %}
     <a href="{% url 'user-profile' room.host.id %}" class="roomListRoom__author">
-{% else %}
+    {% else %}
     <span class="roomListRoom__author">Unknown User</span>
-{% endif %}
+    {% endif %}
       <div class="avatar">
         <img class="av1" src="{{ room.host.avatar.url }}" alt="{{ room.host.username }}" />
       </div>
@@ -72,14 +72,10 @@
       {% if request.user == room.host %}
       <div class="edit-delete">
         <!-- Edit Room Form -->
-      <div class="edit-delete">
-        <!-- Edit Room Form -->
-        <form action="{% url 'updateRoom' room.id %}" method="GET">
-          <button type="submit" class="primary">
-            Edit Post
-          </button>
+        <form action="{% url 'updateRoom' room.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn--main">Edit Post</button>
         </form>
-
 
         <!-- Delete Room Form with custom confirmation modal -->
         <button type="button" class="danger" onclick="openDeleteModal('{{ room.id }}')">Delete Post</button>
@@ -92,10 +88,10 @@
             <button class="cancel-delete" onclick="closeDeleteModal('{{ room.id }}')">Cancel</button>
 
             <!-- Actual Delete Form (hidden) -->
-          <form action="{% url 'updateRoom' room.id %}" method="POST">
+            <form action="{% url 'deleteRoom' room.id %}" method="POST">
               {% csrf_token %}
-              <button type="submit" class="btn btn--main">Edit Post</button>
-          </form>
+              <button type="submit" class="danger">Confirm Deletion</button>
+            </form>
           </div>
         </div>
       </div>
@@ -113,7 +109,7 @@
     </div>
   </div>
 </div>
-{% endif %}
+{% endfor %}
 
 <script>
   let currentImageIndex = 0;
