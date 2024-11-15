@@ -162,19 +162,7 @@ a {
   border-radius: 0px !important;
 }
 
-.avatar {
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  margin-right: 10px !important;
-  overflow: hidden !important;
-}
 
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
 
 .content3 {
   flex: 1 !important;
