@@ -89,9 +89,10 @@
             <button class="cancel-delete" onclick="closeDeleteModal('{{ room.id }}')">Cancel</button>
 
             <!-- Actual Delete Form (hidden) -->
-            <form id="deleteForm-{{ room.id }}" action="{% url 'deleteRoom' room.id %}" method="POST" style="display: none;">
+          <form action="{% url 'updateRoom' room.id %}" method="POST">
               {% csrf_token %}
-            </form>
+              <button type="submit" class="btn btn--main">Edit Post</button>
+          </form>
           </div>
         </div>
       </div>
