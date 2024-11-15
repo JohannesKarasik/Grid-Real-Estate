@@ -52,8 +52,7 @@
           <!-- Submit Button -->
           <div class="form__action">
             <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
-            <button class="btn btn--main" type="submit">Create Post</button>
-          </div>
+            <a href="{% url 'updateRoom' room.id %}" class="btn btn--main">Edit Post</a>          </div>
         </form>
       </div>
     </div>
