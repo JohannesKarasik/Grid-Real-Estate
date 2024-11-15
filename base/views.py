@@ -280,7 +280,7 @@ def home(request):
         Q(description__icontains=q)
     )
 
-    topics = Topic.objects.all()[0:5]
+    topics = Topic.objects.all()[0:8]
     room_count = rooms.count()
 
 
