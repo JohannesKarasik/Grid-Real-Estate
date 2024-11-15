@@ -38,8 +38,7 @@
                 <p class="profile-info-location">{{ user.location }}</p>
             </div>
             <div>
-                <a href="{% url 'view_connections' pk=user.id %}" class="connection-button">View Connections</a>           
-
+                <a href="{% url 'view_connections' user_id=user.id %}" class="connection-button">View Connections</a>
             </div>
             </div>
             </div>
