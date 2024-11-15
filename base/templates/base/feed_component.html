@@ -72,6 +72,14 @@
       {% if request.user == room.host %}
       <div class="edit-delete">
         <!-- Edit Room Form -->
+      {% if request.user == room.host %}
+      <div class="edit-delete">
+        <!-- Edit Room Form -->
+        <form action="{% url 'updateRoom' room.id %}" method="GET">
+          <button type="submit" class="primary">
+            Edit Post
+          </button>
+        </form>
 
 
         <!-- Delete Room Form with custom confirmation modal -->
