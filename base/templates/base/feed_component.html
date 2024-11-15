@@ -72,10 +72,7 @@
       {% if request.user == room.host %}
       <div class="edit-delete">
         <!-- Edit Room Form -->
-      #<form action="{% url 'updateRoom' room.id %}" method="POST">
-       #   {% csrf_token %}
-        #  <button type="submit" class="btn btn--main">Edit Post</button>
-      #</form> 
+
 
         <!-- Delete Room Form with custom confirmation modal -->
         <button type="button" class="danger" onclick="openDeleteModal('{{ room.id }}')">Delete Post</button>
