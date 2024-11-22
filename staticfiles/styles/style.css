@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
-  --color-main: #000000;
+  --color-main: #0b66c2;
   --color-main-light: #000000;
-  --color-dark: #000000;
+  --color-dark: #ffffff;
   --color-dark-medium: #edf3f7;
   --color-dark-light: #757575;
   --color-light: #202020;
@@ -70,6 +70,140 @@ a {
 }
 
 
+.avatar {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid var(--color-main);
+}
+
+.avatar img {
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.avatar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--color-gray);
+  z-index: 111;
+  border-radius: 50%;
+  border: 0.3rem solid var(--color-dark);
+}
+
+.avatar.active::after {
+  background-color: var(--color-success);
+}
+
+.avatar.avatar--small img {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.avatar.avatar--small:after {
+  width: 0.7rem;
+  height: 0.7rem;
+  bottom: 0px;
+  right: -6px;
+}
+
+.avatar.avatar--medium img {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+}
+
+.avatar.avatar--medium:after {
+  width: 0.7rem;
+  height: 0.7rem;
+  bottom: 0px;
+  right: -6px;
+}
+
+.avatar.avatar--large img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.avatar.avatar--large:after {
+  width: 1rem;
+  height: 1rem;
+  bottom: 2px;
+  right: 3.5px;
+}
+
+
+.avatar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--color-gray);
+  z-index: 111;
+  border-radius: 50%;
+  border: 0.3rem solid var(--color-dark);
+}
+
+.avatar.active::after {
+  background-color: var(--color-success);
+}
+
+.avatar.avatar--small img {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.avatar.avatar--small:after {
+  width: 0.7rem;
+  height: 0.7rem;
+  bottom: 0px;
+  right: -6px;
+}
+
+.avatar.avatar--medium img {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+}
+
+.avatar.avatar--medium:after {
+  width: 0.7rem;
+  height: 0.7rem;
+  bottom: 0px;
+  right: -6px;
+}
+
+.avatar.avatar--large img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.avatar.avatar--large:after {
+  width: 1rem;
+  height: 1rem;
+  bottom: 2px;
+  right: 3.5px;
+}
+
+
+.form__avatar label {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-main);
+  cursor: pointer;
+}
+
+.form__avatar label:hover {
+  text-decoration: underline;
+}
+
 .efr2 {
   display: flex !important;
   align-items: center !important;
@@ -102,19 +236,7 @@ a {
   text-align: left !important;
 }
 
-.avatar {
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  margin-right: 10px !important;
-  overflow: hidden !important;
-}
 
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
 
 .content3 {
   padding: 2px !important;
@@ -162,19 +284,7 @@ a {
   border-radius: 0px !important;
 }
 
-.avatar {
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  margin-right: 10px !important;
-  overflow: hidden !important;
-}
 
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
 
 .content3 {
   flex: 1 !important;
@@ -196,19 +306,7 @@ a {
 
 
 
-.avatar {
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  margin-right: 10px !important;
-}
 
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
 
 .content3 {
   padding: 2px !important;
@@ -1132,10 +1230,21 @@ p {
 }
 
 .av1 {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* Ensures the avatar remains circular */
+  position: relative;
+  width: 100px; /* Adjust this size as needed */
+  height: 100px; /* Ensure it's a square */
+  border-radius: 50%; /* Make the container circular */
+  background-color: blue; /* The blue circle around the avatar */
   overflow: hidden;
+}
+
+.av1 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container */
 }
 
 .content3{
@@ -1622,7 +1731,7 @@ font-size: 20px;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #0b66c2 !important;
   color: white;
   cursor: pointer;
 }
