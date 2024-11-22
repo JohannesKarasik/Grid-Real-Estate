@@ -37,7 +37,7 @@ def index(request):
         return JsonResponse({'error': 'No text provided'}, status=400)
 
     # Default page render for GET requests
-    return render(request, 'fixer/index.html')
+    return render(request, 'fixer/templates/fixer/index.html')
 
 
 
